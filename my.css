@@ -1,0 +1,160 @@
+:root {
+  --primary-color: #00ffc3;                /* Neon Mint */
+  --secondary-color: #ff2d95;              /* Cyber Pink */
+  --accent-color: #00bfff;                 /* Neon Blue */
+  --background-color: #0a0a0a;             /* Dark Jet Black */
+  --text-color: #e0e0e0;                   /* Soft White */
+  --border-color: #2d2d2d;                 
+  --card-background-color: #1e1e1e;        
+  --glow-color: rgba(0, 255, 195, 0.6);    
+}
+
+body {
+  color: var(--text-color);
+  background-image: url('C:/Users/ydesi/OneDrive/html/port.jpg');
+  
+  margin: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: italic;
+  font-size: medium;
+
+
+summary {
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  color: var(--accent-color);
+  text-shadow: 0 0 8px var(--accent-color);
+}
+
+i {
+  border: 1px solid var(--border-color);
+  padding: 5px;
+  margin: 5px;
+  color: gold;
+  font-style: normal;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.container img {
+  width: 200px;
+  height: auto;
+  margin-right: 15px;
+  box-shadow: 0 0 15px var(--glow-color);
+}
+
+.text {
+  flex: 1;
+}
+
+div {
+  border: 1px solid var(--border-color);
+  padding: 10px;
+  margin: 10px;
+  background-color: var(--card-background-color);
+  color: var(--text-color); /* Ensures all text in div is visible */
+  box-shadow: 0 0 10px rgba(0, 255, 195, 0.1);
+}
+
+.skill {
+  margin-bottom: 20px;
+}
+
+.bar {
+  background: var(--card-background-color);
+  border-radius: 20px;
+  overflow: hidden;
+  height: 10px;
+  width: 80%;
+  box-shadow: 0 0 10px var(--glow-color);
+}
+
+.fill {
+  background-color: #440683;
+  height: 100%;
+  width: 90%;
+  transition: width 1s;
+  box-shadow: 0 0 12px #440683;
+}
+
+.myno {
+  padding: 10px;
+  margin-top: 50px;
+  width: 85%;
+  height: fit-content;
+  background-color: var(--card-background-color);
+  border: 1px solid var(--border-color);
+  color: var(--text-color); /* FIXED */
+  box-shadow: 0 0 15px rgba(88, 10, 152, 0.6);
+}
+
+.new {
+  text-shadow: 0 0 5px var(--accent-color), 0 -5px 5px gold;
+}
+
+.button {
+  text-decoration: none;
+  border: 1px solid var(--border-color);
+  margin: 5px;
+  padding: 10px;
+  background: var(--accent-color);
+  color: var(--text-color);
+  text-shadow: 0 0 5px gold;
+  box-shadow: 0 0 10px var(--accent-color);
+  transition: 0.3s ease-in-out;
+}
+
+.button:hover {
+  background-color: var(--secondary-color);
+  box-shadow: 0 0 12px var(--secondary-color);
+}
+
+.MINE {
+  text-decoration: none;
+  border: 1px solid var(--border-color);
+  margin: 5px;
+  padding: 10px;
+  background: var(--primary-color);
+  color: var(--text-color); /* Ensures visibility */
+  text-shadow: 0 0 5px gold;
+  float: right;
+  box-shadow: 0 0 15px var(--primary-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  background-color: transparent; /* No color block */
+  color: #00ffc3; /* Bright neon mint */
+  text-shadow: 0 0 4px #00ffc3, 0 0 8px #00ffc3;
+  padding: 10px 0;
+  margin: 10px 0;
+}
+nav {
+  display: flex;
+  gap: 20px;
+  background-color: var(--card-background-color);
+  padding: 15px;
+  box-shadow: 0 0 10px var(--primary-color);
+}
+
+nav a {
+  color: var(--text-color);
+  text-decoration: none;
+  padding: 10px 15px;
+  background-color: var(--background-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 5px;
+  text-shadow: 0 0 4px var(--primary-color);
+  transition: background 0.3s;
+}
+
+nav a:hover {
+  background-color: var(--primary-color);
+  color: black;
+}
+
+}
