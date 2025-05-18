@@ -156,5 +156,16 @@ nav a:hover {
   background-color: var(--primary-color);
   color: black;
 }
+#home-section {
+  display: flex;
+  /* styles */
+}
+
+@media (max-width: 768px) {
+  #home-section {
+    flex-direction: column;
+    text-align: center;
+  }
+}
 
 }
