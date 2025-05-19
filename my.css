@@ -10,8 +10,7 @@
   --glow-color: rgba(0, 85, 170, 0.3);      /* Soft Blue Glow */
 }
 
-/* === DARK MODE OVERRIDES WHEN CHECKED === */
-#theme-toggle:checked ~ body {
+#theme-toggle:checked ~ .wrapper  {
   --primary-color: #00ffc3;                /* Neon Mint */
   --secondary-color: #ff2d95;              /* Cyber Pink */
   --accent-color: #00bfff;                 /* Neon Blue */
