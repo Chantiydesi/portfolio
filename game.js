@@ -1,43 +1,43 @@
-var qBox = document.getElementById("question");
-var aBox = document.getElementById("answer");
-var tBox = document.getElementById("timer");
-var sBox = document.getElementById("score");
+var questionEl = document.getElementById("question");
+var answerEl = document.getElementById("answer");
+var timerEl = document.getElementById("timer");
+var scoreEl = document.getElementById("score");
 var startBtn = document.getElementById("start-btn");
-var endBox = document.getElementById("game-over");
+var gameOverEl = document.getElementById("game-over");
 
 var score = 0;
 var timeLeft = 10;
 var timer;
-var rightAns;
+var correctAnswer;
 
-function makeQ() {
+function generateQuestion() {
   var ops = ["+", "-", "*", "/"];
-  var op = ops[Math.floor(Math.random() * 4)];
+  var op = ops[Math.floor(Math.random() * ops.length)];
 
-  var n1, n2, ans;
+  var num1, num2, ans;
 
   if (op === "/") {
-    n2 = Math.floor(Math.random() * 9) + 1;
+    num2 = Math.floor(Math.random() * 9) + 1;
     ans = Math.floor(Math.random() * 10);
-    n1 = n2 * ans;
+    num1 = num2 * ans;
   } else {
-    n1 = Math.floor(Math.random() * 20) + 1;
-    n2 = Math.floor(Math.random() * 20) + 1;
-    if (op === "+") ans = n1 + n2;
-    else if (op === "-") ans = n1 - n2;
-    else if (op === "*") ans = n1 * n2;
+    num1 = Math.floor(Math.random() * 20) + 1;
+    num2 = Math.floor(Math.random() * 20) + 1;
+    if (op === "+") ans = num1 + num2;
+    if (op === "-") ans = num1 - num2;
+    if (op === "*") ans = num1 * num2;
   }
 
-  qBox.innerHTML = n1 + " " + op + " " + n2 + " = ?";
-  rightAns = ans;
+  questionEl.innerHTML = num1 + " " + op + " " + num2 + " = ?";
+  correctAnswer = ans;
 }
 
-function startTime() {
+function startTimer() {
   timeLeft = 10;
-  tBox.innerHTML = "Time left: " + timeLeft + "s";
+  timerEl.innerHTML = "Time left: " + timeLeft + "s";
   timer = setInterval(function () {
     timeLeft--;
-    tBox.innerHTML = "Time left: " + timeLeft + "s";
+    timerEl.innerHTML = "Time left: " + timeLeft + "s";
     if (timeLeft <= 0) {
       clearInterval(timer);
       endGame("Time's up!");
@@ -45,29 +45,29 @@ function startTime() {
   }, 1000);
 }
 
-function nextQ() {
-  aBox.value = "";
-  aBox.focus();
-  makeQ();
-  startTime();
+function nextQuestion() {
+  answerEl.value = "";
+  answerEl.focus();
+  generateQuestion();
+  startTimer();
 }
 
-function endGame(msg) {
+function endGame(message) {
   clearInterval(timer);
-  qBox.innerHTML = "Game Over!";
-  endBox.innerHTML = msg;
-  aBox.disabled = true;
+  questionEl.innerHTML = "Game Over!";
+  gameOverEl.innerHTML = message;
+  answerEl.disabled = true;
   startBtn.disabled = false;
 }
 
-aBox.addEventListener("keydown", function (e) {
+answerEl.addEventListener("keydown", function (e) {
   if (e.key === "Enter") {
-    var userAns = Number(aBox.value.trim());
-    if (userAns === rightAns) {
+    var userAnswer = Number(answerEl.value.trim());
+    if (userAnswer === correctAnswer) {
       score++;
-      sBox.innerHTML = "Score: " + score;
+      scoreEl.innerHTML = "Score: " + score;
       clearInterval(timer);
-      nextQ();
+      nextQuestion();
     } else {
       clearInterval(timer);
       endGame("Wrong answer!");
@@ -77,9 +77,10 @@ aBox.addEventListener("keydown", function (e) {
 
 startBtn.addEventListener("click", function () {
   score = 0;
-  sBox.innerHTML = "Score: " + score;
-  endBox.innerHTML = "";
-  aBox.disabled = false;
+  scoreEl.innerHTML = "Score: " + score;
+  gameOverEl.innerHTML = "";
+  answerEl.disabled = false;
   startBtn.disabled = true;
-  nextQ();
+  nextQuestion();
 });
+
