@@ -1,23 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title> Quiz Game</title>
-<link rel="stylesheet" href="game.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Math Quiz Game</title>
+  <link rel="stylesheet" href="game.css" />
 </head>
 <body>
-
-<div class="container">
-  <h1>Quiz Game</h1>
-  <div id="question">Press Start to Begin</div>
-  <input type="number" id="answer" disabled placeholder="Enter your answer" />
-  <div id="timer">Time left: 10s</div>
-  <div id="score">Score: 0</div>
-  <button id="start-btn">Start Game</button>
-  <div id="game-over"></div>
-</div>
-
-<script src="game.js"></script>
+  <div class="container">
+    <h1>Math Quiz Game</h1>
+    <div id="question">Press Start to Begin</div>
+    <input type="number" id="answer" placeholder="Enter answer" disabled/>
+    <button id="submit-btn" disabled>Submit</button>
+    <div id="timer">Time left: 10s</div>
+    <div id="score">Score: 0</div>
+    <button id="start-btn">Start Game</button>
+    <div id="game-over"></div>
+  </div>
+  <script src="game.js"></script>
 </body>
 </html>
